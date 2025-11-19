@@ -12,7 +12,8 @@
 
 <div align="left">
 
-   **🙋‍♂️ [Hugo CARVALHO FONTES](https://github.com/HugouShare)**
+   **🙋‍♂️ [Hugo CARVALHO FONTES](https://github.com/HugouShare)**  
+   **🙋‍♂️ [Nelven THEBAULT](https://github.com/nelvtheb)**
 
 </div>
 
