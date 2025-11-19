@@ -19,7 +19,7 @@
 
 ## ⚙️ Introduction
 
-- Dans ce repository GitHub, vous trouverez mon TP de CEM réalisé dans le cadre de ma dernière année d'étude à l'[ENSEA](https://www.ensea.fr/fr), en spécialité électronique et systèmes embarqués.
+- Dans ce repository GitHub, vous trouverez notre TP de CEM réalisé dans le cadre de notre dernière année d'étude à l'[ENSEA](https://www.ensea.fr/fr), en spécialité électronique et systèmes embarqués.
 
 ## 🎯 Organisation du repository
 Vous trouverez, dans le repository, différents dossiers avec :
