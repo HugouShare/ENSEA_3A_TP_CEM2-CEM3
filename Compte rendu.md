@@ -37,7 +37,8 @@ $$
 H = (0, Hy, 0)  
 $$  
 
-Les équations qui nous importent sont alors :  
+### 1.2 Algorithmes à utiliser    
+Les équations qui nous importent sont donc :  
 <img width="186" height="144" alt="image" src="https://github.com/user-attachments/assets/fcaafd04-d0e3-4ddf-bc95-cda5ee6b17d1" />  
 
 En discrétisant les équations précédentes (étape nécessaire pour appliquer la méthode des DF), nous obtenons alors les équations suivantes :  
@@ -51,10 +52,9 @@ avec alpha joue le rôle de critère de stabilité, compris entre 0 et 1.
 
 
 Enfin, nous allons utiliser une source d'excitation au profil Gaussien imposée au centre du domaine de calcul, dont l'expression est la suivante :  
-<img width="381" height="39" alt="image" src="https://github.com/user-attachments/assets/ea760d5d-90f6-4639-bce8-2042c784ad1b" />
+<img width="381" height="39" alt="image" src="https://github.com/user-attachments/assets/ea760d5d-90f6-4639-bce8-2042c784ad1b" />  
 
-
-
+Nous 
 
 
 
