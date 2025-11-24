@@ -45,10 +45,9 @@ En discrétisant les équations précédentes (étape nécessaire pour appliquer
 <img width="878" height="212" alt="image" src="https://github.com/user-attachments/assets/49007832-490f-41cb-8d89-72d2f535af4c" />  
 Où :  
 - chaque pas d'espace est représenté par k
-- chaque pas de temps est représenté par n et régit par :
-<img width="198" height="30" alt="image" src="https://github.com/user-attachments/assets/b86d0ddd-cf36-4f1e-b74a-f4d9247cfdeb" />
-
-avec alpha joue le rôle de critère de stabilité, compris entre 0 et 1.  
+- chaque pas de temps est représenté par n et régit par :  
+  <img width="198" height="30" alt="image" src="https://github.com/user-attachments/assets/b86d0ddd-cf36-4f1e-b74a-f4d9247cfdeb" />  
+  avec alpha joue le rôle de critère de stabilité, compris entre 0 et 1.  
 
 
 Enfin, nous allons utiliser une source d'excitation au profil Gaussien imposée au centre du domaine de calcul, dont l'expression est la suivante :  
