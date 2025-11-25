@@ -71,26 +71,40 @@ Nous
 On considère : k indice dans l'espace & n indice temporel  
 
 ## 1ere exec 
-<img width="1652" height="862" alt="image" src="https://github.com/user-attachments/assets/ce12d775-6156-4a4c-8bd4-19c1c71f30a1" />
+<!-- Ligne 1 -->
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/ce12d775-6156-4a4c-8bd4-19c1c71f30a1" width="48%" />
+  <img src="https://github.com/user-attachments/assets/02055775-f0a1-4966-9ebc-c400326bb1f2" width="48%" />
+</p>
 
-<img width="1623" height="874" alt="image" src="https://github.com/user-attachments/assets/02055775-f0a1-4966-9ebc-c400326bb1f2" />
+<!-- Ligne 2 -->
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/6b32f112-e371-4e32-84bd-25f72a58eb21" width="48%" />
+  <img src="https://github.com/user-attachments/assets/f6301c8a-0fa7-43b3-ad58-b0e680ea06c3" width="48%" />
+</p>
 
-<img width="1594" height="876" alt="image" src="https://github.com/user-attachments/assets/6b32f112-e371-4e32-84bd-25f72a58eb21" />
-
-<img width="1677" height="868" alt="image" src="https://github.com/user-attachments/assets/f6301c8a-0fa7-43b3-ad58-b0e680ea06c3" />
 
 Pour alpha = 0.5
-<img width="1639" height="869" alt="image" src="https://github.com/user-attachments/assets/456fcd44-7c83-4cd8-a71a-74c49aff578d" />
-<img width="1665" height="885" alt="image" src="https://github.com/user-attachments/assets/ea9fa61e-b867-47ce-b6bf-301d402c3476" />
+<!-- Ligne 3 -->
+<p float="left">
+<img src="https://github.com/user-attachments/assets/456fcd44-7c83-4cd8-a71a-74c49aff578d" width="48%" />
+<img src="https://github.com/user-attachments/assets/ea9fa61e-b867-47ce-b6bf-301d402c3476" width="48%" />
+</p>
 
 Pour alpha = 1.1
-<img width="1617" height="852" alt="image" src="https://github.com/user-attachments/assets/ca4df660-9abb-47b9-bb84-d2f96e9592ae" />
-<img width="1629" height="841" alt="image" src="https://github.com/user-attachments/assets/46157159-dc2f-40ba-8c20-12664f53eaa3" />
+<!-- Ligne 4 -->
+<p float="left">
+<img src="https://github.com/user-attachments/assets/ca4df660-9abb-47b9-bb84-d2f96e9592ae" width="48%" />
+<img src="https://github.com/user-attachments/assets/46157159-dc2f-40ba-8c20-12664f53eaa3" width="48%" />
+</p>
 
 Pour max_time = 300 et alpha =1
-<img width="1601" height="841" alt="image" src="https://github.com/user-attachments/assets/3c0281f1-b197-472d-94cc-1f40c81605b0" />
-<img width="1592" height="826" alt="image" src="https://github.com/user-attachments/assets/fb8661cc-02a4-4da2-81b0-5bea142e214d" />
-<img width="1662" height="876" alt="image" src="https://github.com/user-attachments/assets/f567c141-d5cd-4866-a3a8-f1c71527ccb1" />
+<!-- Ligne 5 -->
+<p float="left">
+<img src="https://github.com/user-attachments/assets/3c0281f1-b197-472d-94cc-1f40c81605b0" width="32%" />
+<img src="https://github.com/user-attachments/assets/fb8661cc-02a4-4da2-81b0-5bea142e214d" width="32%" />
+<img src="https://github.com/user-attachments/assets/f567c141-d5cd-4866-a3a8-f1c71527ccb1" width="32%" />
+</p>
 
 Avec condition n<=60
 <img width="1599" height="854" alt="image" src="https://github.com/user-attachments/assets/9a1432dc-b6d0-4eb1-ac58-235723003044" />
