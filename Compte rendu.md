@@ -53,24 +53,11 @@ Où :
 Enfin, nous allons utiliser une source d'excitation au profil Gaussien imposée au centre du domaine de calcul, dont l'expression est la suivante :  
 <img width="381" height="39" alt="image" src="https://github.com/user-attachments/assets/ea760d5d-90f6-4639-bce8-2042c784ad1b" />  
 
-Nous 
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Note durant TP
-On considère : k indice dans l'espace & n indice temporel  
+On considère : $k$ indice dans l'espace & $n$ indice temporel.
 
-## 1ere exec 
+## Exercie `scriptFTD01.m` 
 <!-- Ligne 1 -->
 <p float="left">
   <img src="https://github.com/user-attachments/assets/ce12d775-6156-4a4c-8bd4-19c1c71f30a1" width="48%" />
@@ -98,6 +85,9 @@ Pour alpha = 1.1
 <img src="https://github.com/user-attachments/assets/46157159-dc2f-40ba-8c20-12664f53eaa3" width="48%" />
 </p>
 
+>[!IMPORTANT]
+> On remarque bien que dépasser le critère de stabilitié, le signal explose complètement et diverge.
+
 Pour max_time = 300 et alpha =1
 <!-- Ligne 5 -->
 <p float="left">
@@ -114,7 +104,7 @@ On passe au cas d'une soft-source :
 ...
 
 Nous supprimons maintenant les sources temporelles et passons à une source spatiale.
-Avec la formule : c0^2.eps0.mu0=1 on déduit c0.
-ON observe que la source spatiale correspond à une soft source
+Avec la formule : `c0^2.eps0.mu0=1` on déduit `c0`.
+On observe que la source spatiale correspond à une soft source
 
-Nous nous proposons maintenant de modifier les codnitions aux limites ie en 1 et max_space cf sujet.
+Nous nous proposons maintenant de modifier les conditions aux limites ie en 1 et `max_space` cf sujet.
