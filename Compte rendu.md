@@ -108,3 +108,5 @@ Avec la formule : `c0^2.eps0.mu0=1` on déduit `c0`.
 On observe que la source spatiale correspond à une soft source
 
 Nous nous proposons maintenant de modifier les conditions aux limites ie en 1 et `max_space` cf sujet.
+
+Pour $\alpha=0.5$ :
