@@ -296,6 +296,8 @@ On obtient alors les résultats suivants :
 <img width="1651" height="836" alt="image" src="https://github.com/user-attachments/assets/85a21cb4-0659-4e2d-9bb8-bbd6b6b6a256" />  
 <img width="1600" height="828" alt="image" src="https://github.com/user-attachments/assets/603a57ce-7123-459c-ac7b-48993a402e40" />  
 <img width="1654" height="843" alt="image" src="https://github.com/user-attachments/assets/2a290471-a69e-4248-86a0-146aac89ca05" />  
+<img width="1605" height="849" alt="image" src="https://github.com/user-attachments/assets/f9107a64-1e80-4985-b4e6-97bc459c0635" />
+
 
 
 
