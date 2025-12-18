@@ -25,4 +25,4 @@
 Vous trouverez, dans le repository, différents dossiers avec :
 - "_Ressources_" : les sujets et documents fournis par le professeur pour le TP
 - "_Livrables_" : les fichiers générés ou utilisés par nous-même durant le TP
-- "_Compte rendu_" : un fichier markdown servant de rapport de TP
+- "_Compte rendu_" : un fichier markdown servant de rapport de TP (**NOTE** le TP3 se trouve à la fin du TP2)
