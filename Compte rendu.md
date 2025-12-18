@@ -244,11 +244,6 @@ En préambule deux modifications avant d’introduire le domaine diélectrique d
 
 #### scriptFDTD05  
 
-Nous commençons par modifier l'emplacement de la source ainsi que la configuration du problème de manière à avoir :
-- $L=0.5$ m
-- $dz=0.001$ m
-- $t_0=400$  
-
 ```MATLAB
 max_time  = 1500;
 max_space = 501;
@@ -271,11 +266,12 @@ t0 = 400*dt; % source en temps maximale a cet instant
 ```
 
 On obtient alors les résultats suivants :  
+
 <img width="1618" height="839" alt="image" src="https://github.com/user-attachments/assets/e12a1d89-f090-47ad-8a3a-86ef0fe16184" />  
 
 #### scriptFDTD06  
 
-Enfin, nous modifions notre code de façon à que le calcul du champs E tienne maintenant compte d’une valeur 𝜺𝒓 = 𝟏 pour z compris entre 0 et 0.2m et que dans le « slab » diélectrique, soit pour z compris entre 0.2 et 0.5m, on ait 𝜺𝒓 = 𝟒.  
+Enfin, nous modifions notre code de façon à ce que le calcul du champs E tienne maintenant compte d’une valeur $\varepsilon_r=1$ pour z compris entre 0 et 0.2m et que dans le « slab » diélectrique, soit pour z compris entre 0.2 et 0.5m, on ait 𝜺𝒓 = 𝟒.  
 
 On ajoute alors le code suivant :  
 ```MATLAB
