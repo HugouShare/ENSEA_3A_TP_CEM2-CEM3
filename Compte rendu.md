@@ -242,8 +242,12 @@ En préambule deux modifications avant d’introduire le domaine diélectrique d
 - placer la source (pulse gaussien comme dans le script précédent au point $z=0.001$ (cela revient à exciter E(2)) ; ceci pour éviter de générer deux ondes divergentes et se concentrer sur l’onde électromagnétique se propageant dans le sens « +z »,
 - lancer enfin notre code `scriptFDTD05` pour `max_time=1500` et vérifier que la propagation se déroule correctement.
 
+#### Modfications faites 
 
-
+- $L=0.5$m
+- $dz=0.001$m
+- $t_0=400$
+-
 
 
 
