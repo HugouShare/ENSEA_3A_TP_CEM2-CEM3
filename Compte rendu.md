@@ -244,8 +244,8 @@ En préambule deux modifications avant d’introduire le domaine diélectrique d
 
 #### Modfications faites 
 
-- $L=0.5$m
-- $dz=0.001$m
+- $L=0.5$ m
+- $dz=0.001$ m
 - $t_0=400$
 -
 
