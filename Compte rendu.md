@@ -360,8 +360,15 @@ Une cavité électromagnétique peut être définie comme un volume au sein duqu
 
 ## Théorie modale d’une cage de Faraday sans pertes  
 
-## Code numérique : prise en main du logiciel FDTD.m
+## Code numérique : prise en main du logiciel FDTD.m  
 
+```MATLAB 
+% Parameter initiation
+Lx = 6.7; Ly = 8.4; Lz = 3.5; % Cavity dimensions in meters
+Nx =  67; Ny =  84; Nz =  35; % Number of cells in each direction
+```  
+
+On ajoute une fonction permettant de calculer la fréquence de résonance  
 
 
 
