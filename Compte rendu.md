@@ -271,7 +271,7 @@ On obtient alors les résultats suivants :
 
 #### scriptFDTD06  
 
-Enfin, nous modifions notre code de façon à ce que le calcul du champs E tienne maintenant compte d’une valeur $\varepsilon_r=1$ pour z compris entre 0 et 0.2m et que dans le « slab » diélectrique, soit pour z compris entre 0.2 et 0.5m, on ait 𝜺𝒓 = 𝟒.  
+Enfin, nous modifions notre code de façon à ce que le calcul du champs E tienne maintenant compte d’une valeur $\varepsilon_r=1$ pour z compris entre 0 et 0.2m et que dans le « slab » diélectrique, soit pour z compris entre 0.2 et 0.5m, on ait $\varepsilon_r=4$.  
 
 On ajoute alors le code suivant :  
 ```MATLAB
@@ -293,10 +293,22 @@ Et on remplace :
 ```
 
 On obtient alors les résultats suivants :  
-<img width="1651" height="836" alt="image" src="https://github.com/user-attachments/assets/85a21cb4-0659-4e2d-9bb8-bbd6b6b6a256" />  
-<img width="1600" height="828" alt="image" src="https://github.com/user-attachments/assets/603a57ce-7123-459c-ac7b-48993a402e40" />  
-<img width="1654" height="843" alt="image" src="https://github.com/user-attachments/assets/2a290471-a69e-4248-86a0-146aac89ca05" />  
-<img width="1605" height="849" alt="image" src="https://github.com/user-attachments/assets/f9107a64-1e80-4985-b4e6-97bc459c0635" />
+
+<p float="left">
+<img src="https://github.com/user-attachments/assets/85a21cb4-0659-4e2d-9bb8-bbd6b6b6a256" width="48%" />
+<img src="https://github.com/user-attachments/assets/603a57ce-7123-459c-ac7b-48993a402e40" width="48%" />
+</p>
+
+
+<p float="left">
+<img src="https://github.com/user-attachments/assets/2a290471-a69e-4248-86a0-146aac89ca05" width="48%" />
+<img src="https://github.com/user-attachments/assets/f9107a64-1e80-4985-b4e6-97bc459c0635" width="48%" />
+</p>
+
+> Sur le graph en haut à droite on remarque bien une déformation et un ralentissement lorsque l'on dépasse 0,2m (changement de milieu).
+
+>[!IMPORTANT]
+> Sur le graph en bas à gauche on observe que l'onde a été réfléchie et legerement atténuée. En effet quand l'on change de dielectrique, l'onde est plus lente et le pas temporel définis pour avancer d'un pas spacial n'est plus valide. Notre condition au bord en devient donc affecté et ne met pas à jour assez vite par rapport au déplacement spatial donc l'onde n'est pas complétement atténuée.
 
 
 
