@@ -1,31 +1,42 @@
 # Travaux pratiques 2 CEM : utilisation de la méthode DF pour la simulation CEM
 
-## Contexte global
+## Contexte global  
+
 ### Objectifs :  
+
 - Calcul des champs électrique / magnétique par la méthode des différences finies
-- Développement d’un code de calcul temporel  
+- Développement d’un code de calcul temporel
+
 ### Compétences visées :  
+
 - Connaitre les éléments constitutifs d’un modèle électromagnétique sur un exemple de calcul
 transitoire : domaine de calcul, source, conditions initiales, conditions aux limites, itérations
 - Utilisation d’un outil de simulation & développement numérique (sous environnement Matlab /
 Octave)
 - Post-traitement des données & sensibilisation aux grandeurs CEM
+
 ### Contrôle des connaissances :  
+
 - Rendu d’un compte-rendu des travaux suite à la séance de travaux
 
 ## Introduction  
+
 Durant ce TP, nous traitons d'électrodynamique dans un contexte de CEM.  
 Ainsi, nous allons nous intéresser à la propagation d’une onde électromagnétique et calculer, selon une unique dimension (z par exemple), ses composantes Ex et Hy via la résolution des équations de Maxwell. Nous obtiendrons alors les différentes valeurs de Ex et Hy au cours du temps t et en tout point de l'axe z. 
 
 ## 1. Schéma FDTD  
+
 ### 1.1 Les équations de Maxwell  
-#### Généralités...
+
+#### Généralités...  
+
 En espace libre (faible intéraction entre les ondes et les objets environnants), l'évolution de la propagation temporelle d'ondes électromagnétiques peut être obtenue grâce aux équations de Maxwell, dont voici les expressions :  
 <img width="197" height="139" alt="image" src="https://github.com/user-attachments/assets/bdcdd0af-d22a-4585-abc5-0b46dfd448eb" />  
 Ou encore, de manière équivalente :    
 <img width="547" height="418" alt="image" src="https://github.com/user-attachments/assets/b25f2ef6-e664-4384-b633-2e1fb06ba4f2" />
 
 #### Dans notre cas à nous... 
+
 Dans notre cas à nous, nous nous intéresserons seulement à la propragation d'une onde selon l'axe z.  
 De cela découle alors :  
 
@@ -38,6 +49,7 @@ H = (0, Hy, 0)
 $$  
 
 ### 1.2 Algorithmes à utiliser    
+
 Les équations qui nous importent sont donc :  
 <img width="186" height="144" alt="image" src="https://github.com/user-attachments/assets/fcaafd04-d0e3-4ddf-bc95-cda5ee6b17d1" />  
 
@@ -54,10 +66,12 @@ Enfin, nous allons utiliser une source d'excitation au profil Gaussien imposée 
 <img width="381" height="39" alt="image" src="https://github.com/user-attachments/assets/ea760d5d-90f6-4639-bce8-2042c784ad1b" />  
 
 
-## Note durant TP
+## Note durant TP  
+
 On considère : $k$ indice dans l'espace & $n$ indice temporel.
 
-## Exercie `scriptFTD01.m` 
+## Exercice `scriptFTD01.m` 
+
 <!-- Ligne 1 -->
 <p float="left">
   <img src="https://github.com/user-attachments/assets/ce12d775-6156-4a4c-8bd4-19c1c71f30a1" width="48%" />
@@ -69,7 +83,6 @@ On considère : $k$ indice dans l'espace & $n$ indice temporel.
   <img src="https://github.com/user-attachments/assets/6b32f112-e371-4e32-84bd-25f72a58eb21" width="48%" />
   <img src="https://github.com/user-attachments/assets/f6301c8a-0fa7-43b3-ad58-b0e680ea06c3" width="48%" />
 </p>
-
 
 Pour alpha = 0.5
 <!-- Ligne 3 -->
