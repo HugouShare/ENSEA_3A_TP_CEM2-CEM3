@@ -126,9 +126,11 @@ Nous nous proposons maintenant de modifier les conditions aux limites ie en 1 et
 Pour $\alpha=0.5$ :
 
 - mettre screen onde disparait + phase
-<img width="1590" height="840" alt="image" src="https://github.com/user-attachments/assets/a3d027ea-6dd6-4fb9-91d1-c802db7c9c08" />  
-<img width="1611" height="853" alt="image" src="https://github.com/user-attachments/assets/97d44d5f-46b1-4f7b-80b5-e6d8a46d8745" />  
-<img width="1637" height="861" alt="image" src="https://github.com/user-attachments/assets/7e154423-71df-47b1-8a6d-91705853ac4c" />  
+<p float="left">
+<img src="https://github.com/user-attachments/assets/a3d027ea-6dd6-4fb9-91d1-c802db7c9c08" width="32%" />
+<img src="https://github.com/user-attachments/assets/97d44d5f-46b1-4f7b-80b5-e6d8a46d8745" width="32%" />
+<img src="https://github.com/user-attachments/assets/7e154423-71df-47b1-8a6d-91705853ac4c" width="32%" />
+</p>
 
 - Mettre partie du code avec les Eright1 = E(max...
 ```MATLAB
