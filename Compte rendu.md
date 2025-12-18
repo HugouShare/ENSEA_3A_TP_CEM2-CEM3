@@ -60,15 +60,14 @@ Où :
 - chaque pas d'espace est représenté par k
 - chaque pas de temps est représenté par n et régit par :  
   <img width="198" height="30" alt="image" src="https://github.com/user-attachments/assets/b86d0ddd-cf36-4f1e-b74a-f4d9247cfdeb" />  
-  avec alpha joue le rôle de critère de stabilité, compris entre 0 et 1.  
-
+  avec alpha jouant le rôle de critère de stabilité, compris entre 0 et 1.  
 
 Enfin, nous allons utiliser une source d'excitation au profil Gaussien imposée au centre du domaine de calcul, dont l'expression est la suivante :  
 <img width="381" height="39" alt="image" src="https://github.com/user-attachments/assets/ea760d5d-90f6-4639-bce8-2042c784ad1b" />  
 
 ## Note durant TP  
 
-On considère : 
+On considère :  
 `k : indice dans l'espace`  
 `n : indice temporel`  
 
@@ -127,11 +126,73 @@ Nous nous proposons maintenant de modifier les conditions aux limites ie en 1 et
 Pour $\alpha=0.5$ :
 
 - mettre screen onde disparait + phase
+<img width="1590" height="840" alt="image" src="https://github.com/user-attachments/assets/a3d027ea-6dd6-4fb9-91d1-c802db7c9c08" />  
+<img width="1611" height="853" alt="image" src="https://github.com/user-attachments/assets/97d44d5f-46b1-4f7b-80b5-e6d8a46d8745" />  
+<img width="1637" height="861" alt="image" src="https://github.com/user-attachments/assets/7e154423-71df-47b1-8a6d-91705853ac4c" />  
+
 - Mettre partie du code avec les Eright1 = E(max...
+```MATLAB
+alpha = 0.5;
+```  
+```MATLAB
+% On veut maintenant avoir des conditions absorbantes aux limites : 
+% en z = 1 et z = max_space
+Eright1 = 0;
+Eright2 = 0;
+Eleft1 = 0;
+Eleft2 = 0;
+
+% Début boucle temporelle
+for n = 1:max_time
+
+    % Boucle interieure sur le champ E
+    for k = 2:max_space-1 
+        E(k) = E(k) + alphaH*(H(k)-H(k-1));
+    end
+   
+    E(max_space) = Eright2;
+    Eright2 = Eright1;
+    Eright1 = E(max_space-1);
+    E(1) = Eleft2;
+    Eleft2 = Eleft1;
+    Eleft1 = E(2);
+    
+    % Hard source
+    pulse = exp(-(n*dt-t0)^2/spread^2);
+
+    % Hard source coupée à n = 60
+    if n<=60
+        E(center_problem_space) = pulse;
+    end
+
+    % Soft source 
+    % E(center_problem_space) = E(center_problem_space) + pulse;
+
+    % Boucle interieure sur le champ H
+    for j = 1:max_space-1 % quelles valeurs ?
+        H(j) = H(j) + alphaE*(E(j+1)-E(j));% quelles valeurs ?
+    end
+
+    % Trace et progression de l'onde electrique
+    figure(1)
+    plot([0:max_space-1]*dz,E)
+    axis([0 (max_space)*dz -1.1 1.1])
+    title('Simulation FDTD du champ electrique')
+    xlabel('z (position en espace) [m]')
+    ylabel('E_x [V/m]')
+    pause(0.05)
+
+end 
+% Fin boucle temporelle
+```  
 - Comme nous avons paramétré notre $dt$ avec $\alpha$, en le laissant à 0.5, on parcourt 1 pas spatial en 2 itérations (2 pas temporels) et donc on respecte bien notre condition de type $E(1)^n=E(2)^{n-2}$
 
 Pour $\alpha = 1$
-
+- code
+```MATLAB
+alpha = 1;
+```  
 - mettre screen onde disparait + phase
+<img width="642" height="499" alt="image" src="https://github.com/user-attachments/assets/edc76768-cddd-4ec9-94fe-9db79303c410" />  
 - rien eu besoin de modifier
 
