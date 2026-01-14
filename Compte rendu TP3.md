@@ -130,8 +130,8 @@ La charge est représentée par un volume pavé diélectrique :
 ### 5°) On réalise les modèles numériques de CRBM dans deux fichiers MATLAB distincts (`FDTD_crbm_vide.m` et `FDTD_crbm_chargee.m`) en aménageant le code `FDTD.m` précédent.
 
 <img width="1597" height="847" alt="image" src="https://github.com/user-attachments/assets/39b68238-6f2a-4618-ad88-6c279992f1ab" />
+<img width="1556" height="860" alt="image" src="https://github.com/user-attachments/assets/752b62db-de81-41be-b4e6-629ae677bb85" />
 
-Les 2 courbes sont bien superposée et légerement décalées sur les dernières itérations.
 
 ### 6°) On va stocker les valeurs des champs Ex, Ey et Ez à chaque itération dans un fichier (respectivement `result_vide.txt` et `result_chargee.txt`) : le fichier comportera autant de lignes que d’itérations FDTD et 3 colonnes (pour Ex, Ey et Ez).
 
@@ -139,3 +139,22 @@ Dans quel but ?
 
 Les champs électriques sont stockés à chaque itération temporelle afin de permettre une analyse temporelle et fréquentielle (FFT) du comportement de la cavité. La comparaison entre la cavité vide et chargée met en évidence l’influence du milieu diélectrique sur la dynamique des champs et les modes excités.
 
+### 7°) Visualisation les résultats temporels obtenus à l’aide de MATLAB (‘plot’) en représentant le temps de la simulation en abscisse et les champs électriques en ordonnée.
+
+<img width="1573" height="856" alt="image" src="https://github.com/user-attachments/assets/517432e7-d5a1-4ef6-a639-8b50278b1b37" />
+
+La représentation temporelle des composantes du champ électrique permet d’analyser la dynamique des champs dans la cavité. On observe une modification de l’amplitude et du régime oscillatoire lorsque la cavité est chargée, traduisant l’influence du milieu diélectrique sur les modes de résonance.
+
+### 8°) On utilise le programme `FFT_crbm.m` afin de transposer nos résultats temporels en données fréquentielles
+
+Explications
+1. Fs = 1/Dt : fréquence d’échantillonnage pour la FFT
+2. FFT_crbm(signal, Fs) :
+   - signal : vecteur temporel (Ex, Ey ou Ez)
+   - Fs : fréquence d’échantillonnage
+   - retourne :
+      - fx : axe fréquentiel (Hz)
+      - signal_FFT : FFT complexe du signal
+        
+3. 20*log10(abs(...)) : amplitude en dB pour visualisation
+4. Les spectres permettent de voir les raies modales et l’influence du diélectrique.
