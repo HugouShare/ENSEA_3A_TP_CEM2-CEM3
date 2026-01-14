@@ -19,6 +19,10 @@
 
 - Rendu d’un compte-rendu des travaux suite à la séance de travaux
 
+### Aide
+
+- Dans le compte rendu `<nombre>°)` (ex `1°)`) veut dire que l'on répond à une question et qu'un fichier `tp<nombre>.m` (ex `tp01.m`) est associé dans le livrable
+
 ## Introduction  
 
 Une cavité électromagnétique peut être définie comme un volume au sein duquel un champ d’ondes stationnaires s’établit suite aux multiples réflexions sur les parois parfaitement conductrices de l’enceinte. La géométrie du volume peut être quelconque, mais nous considérerons uniquement le cas le plus courant, i.e. celui d’un parallélépipède rectangle (Figure 1). De plus, le milieu interne correspondant à l’air est assimilé au vide de permittivité électrique0 εr et de perméabilité magnétique0 μ0.
@@ -86,7 +90,7 @@ end
   <img src="https://github.com/user-attachments/assets/64e3d351-f07d-42c5-a0f0-a1240c090be2" width="48%" />
 </p>
 
-### 1°) cf. `tp01.m`
+### 1°) Identification des différents parties du code du calcul cf. `tp01.m`
 
 ### 2°) L’utilisation d’un code temporel de type FDTD présente plusieurs avantages majeurs :
 1. Accès large bande fréquentielle
@@ -102,3 +106,25 @@ end
 
 ### 3°) On ne modifie pas le script car nous avons déjà ces paramètres.
 
+### 4°) Sauvegarde des résultats de $\vec E$ dans `Ets.txt`
+
+```MATLAB
+% Sauvegarde format texte lisible
+fid = fopen('Ets.txt','w');
+fprintf(fid,'%% n\tEx(V/m)\t\tEy(V/m)\t\tEz(V/m)\n');
+for n = 1:Nt
+fprintf(fid,'%d\t%e\t%e\t%e\n',n,Ets(n,1),Ets(n,2),Ets(n,3));
+end
+fclose(fid);
+```
+## Code numérique : modélisations de cavités « vide » et « chargée »
+
+Dans cette partie, on va retrouver numériquement les modes de résonance d’une cavité de type Chambre Réverbérante (CR) dans les cas `vide` et `chargé` (voir Figure 2).
+
+<img width="477" height="202" alt="image" src="https://github.com/user-attachments/assets/34c72453-267b-4fff-9fa7-5a716bbefd45" />
+
+La charge est représentée par un volume pavé diélectrique :
+- Position : xmin=1m ; ymin=1m ; zmin=1m / xmax=4m ; ymax=6m ; zmax=3m
+- Propriétés diélectriques : $\varepsilon_r$ = 3 dans toutes les directions
+
+### 5°) On réalise les modèles numériques de CRBM dans deux fichiers MATLAB distincts (`FDTD_crbm_vide.m` et `FDTD_crbm_chargee.m`) en aménageant le code `FDTD.m` précédent.
