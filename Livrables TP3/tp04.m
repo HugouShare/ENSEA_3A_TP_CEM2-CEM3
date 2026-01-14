@@ -1,21 +1,28 @@
 function [Ets]=FDTD()
 
 % Physical constants
+% Implémentation des différentes constantes physiques
 eps0 = 8.8541878e-12;         % Permittivity of vacuum
 mu0  = 4e-7 * pi;             % Permeability of vacuum
 c0   = 299792458;             % Speed of light in vacuum
 
 % Parameter initiation
+% Implémentation des différents paramètres telles que : dimensions de la
+% cavité, nombre de cellules dans chaque direction, nombre de pas de
+% temps, ...
 Lx = 6.7; Ly = 8.4; Lz = 3.5; % Cavity dimensions in meters
 Nx =  67; Ny =  84; Nz =  35; % Number of cells in each direction
 Cx = Nx / Lx;                 % Inverse cell dimensions
 Cy = Ny / Ly;
 Cz = Nz / Lz;
-Nt = 40;                     % Number of time steps
+Nt = 400;                     % $$$$$$$$$$ Modification du pas de temps de 40 à 400 $$$$$$$$$$
 %Dt = 1/(c0*norm([Cx Cy Cz])); % Time step
 Dt=1e-10;
 
 % Allocate field matrices
+% Initialisation avec des zéros des différentes valeurs des champs
+% électriques et magnétiques, ainsi que des différentes valeurs de epsilon
+% et sigma
 Ex = zeros(Nx  , Ny+1, Nz+1);
 Ey = zeros(Nx+1, Ny  , Nz+1);
 Ez = zeros(Nx+1, Ny+1, Nz  );
@@ -30,6 +37,9 @@ EPS_Z = eps0*ones(Nx+1, Ny+1, Nz  );
 SIGMA_Z = zeros(Nx+1, Ny+1, Nz  );
 
 % Initial value : epsr
+% Calcul des différentes valeurs de epsilon selon les trois différentes
+% dimensions et en vue de délimiter la différence entre propagation dans le
+% vide (air soit eps0) et dans un milieu autre que le vide (soit epsr*eps0)
 epsrx=3.0;
 epsry=3.0;
 epsrz=3.0;
@@ -38,6 +48,8 @@ EPS_Y(20:25,20:21,20)=epsry*eps0;
 EPS_Z(20:25,20:21,20)=epsrz*eps0;
 
 % Insertion of espilon/sigma
+% Calcul des différentes constantes de propagation dans les trois
+% différentes dimensions
 KE0X=(2*EPS_X-SIGMA_X*Dt)./(2*EPS_X+SIGMA_X*Dt);
 KE1X=((2*Dt)./(2*EPS_X+SIGMA_X*Dt));
 %KE2X=((2*Dt)./(2*EPS_X+SIGMA_X*Dt));
@@ -49,9 +61,11 @@ KE1Z=((2*Dt)./(2*EPS_Z+SIGMA_Z*Dt));
 %KE2Z=((2*Dt)./(2*EPS_Z+SIGMA_Z*Dt));
 
 % Allocate time signals
+% Base de temps
 Et = zeros(Nt,3);
 
 % Initial value : input/output
+% Implémentation des différentes valeurs d'entrée et de sortie
 xi=6;
 yi=6;
 zi=6;
@@ -68,12 +82,13 @@ xo=6;
 yo=11;
 zo=6;
 
-
+% Démarrage de la clock
 tic
 % Time stepping
 for n = 1:Nt
   n;
   % Update H everywhere
+  % Calcul et mise à jour de la valeur de H dans l'espace 3D 
   Hx = Hx + (Dt/mu0)*((Ey(:,:,2:Nz+1)-Ey(:,:,1:Nz))*Cz ...
                     - (Ez(:,2:Ny+1,:)-Ez(:,1:Ny,:))*Cy);
   Hy = Hy + (Dt/mu0)*((Ez(2:Nx+1,:,:)-Ez(1:Nx,:,:))*Cx ...
@@ -82,6 +97,8 @@ for n = 1:Nt
                     - (Ey(2:Nx+1,:,:)-Ey(1:Nx,:,:))*Cx);
 
   % Initiate fields (near but not on the boundary)
+  % Instanciation des différents champs électriques dans les trois
+  % différentes dimensions proche de la frontière et implémentation d'une source ponctuelle
   if (n<=nfin)
     source_ponctuelle = exp(-(n*Dt-t0)*(n*Dt-t0)/sigma/sigma);
     Ex(xi,yi,zi) = source_ponctuelle;
@@ -90,6 +107,8 @@ for n = 1:Nt
   end
   
   % Update E everywhere except on boundary
+  % Calcul et mise à jour de la valeur de E partout dans l'espace 3D sauf à
+  % la frontière
   Ex(:,2:Ny,2:Nz) = KE0X(:,2:Ny,2:Nz).*Ex(:,2:Ny,2:Nz) + ... %(Dt /eps0) * ...
       KE1X(:,2:Ny,2:Nz).*(Hz(:,2:Ny,2:Nz)-Hz(:,1:Ny-1,2:Nz))*Cy ...
      - KE1X(:,2:Ny,2:Nz).*(Hy(:,2:Ny,2:Nz)-Hy(:,2:Ny,1:Nz-1))*Cz;
@@ -101,7 +120,17 @@ for n = 1:Nt
      - KE1Z(2:Nx,2:Ny,:).*(Hx(2:Nx,2:Ny,:)-Hx(2:Nx,1:Ny-1,:))*Cy;
 
   % Sample the electric field at chosen points
+  % Echantillonnage du champs électrique aux différents points choisis
   Ets(n,:) = [Ex(xo,yo,zo) Ey(xo,yo,zo) Ez(xo,yo,zo)];
 end
 
 toc
+% Fin de la clock
+
+% Sauvegarde format texte lisible
+fid = fopen('Ets.txt','w');
+fprintf(fid,'%% n\tEx(V/m)\t\tEy(V/m)\t\tEz(V/m)\n');
+for n = 1:Nt
+    fprintf(fid,'%d\t%e\t%e\t%e\n',n,Ets(n,1),Ets(n,2),Ets(n,3));
+end
+fclose(fid);

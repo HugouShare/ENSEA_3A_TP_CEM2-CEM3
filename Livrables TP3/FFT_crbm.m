@@ -1,7 +1,5 @@
 % Fonction visant à déterminer la FFT pour diverses valeurs de champ E
 function FFT_crbm(pas_de_temps)
-% Parametres d'entree :
-
 tic
 
 % Choix du fichier d'entrée et lecture des données
@@ -12,7 +10,6 @@ a1(:,:)=load(namea);
 % Récupérer les paramètres
 taille=size(a1);         % nb total de lignes dans le fichier
 nb_shoot=size(a1,1);     % nb d'itération en temps
-
 
 % Récupération des composantes en champs E
 Ex=a1(:,1);
@@ -51,4 +48,3 @@ plot(Freq,FFT_Ex)
 
 toc
 end % Fin de la fonction
-
