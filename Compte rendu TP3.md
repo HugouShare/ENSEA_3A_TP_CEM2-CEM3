@@ -25,6 +25,36 @@ Une cavité électromagnétique peut être définie comme un volume au sein duqu
 
 ## Théorie modale d’une cage de Faraday sans pertes  
 
+Si on excite la cavité à l’aide d’une onde électromagnétique, des champs sont générés et vérifient
+l’équation de propagation de Helmholtz (voir cours) (1):
+
+$$\boxed{\Delta\Psi+k^2\Psi=0}$$
+
+Où $\Psi$ représente indifféremment le champ électrique $\vec E$ ou magnétique $\vec H$ et $k$ la constante de
+propagation. Les solutions sont appelées les fonctions propres de l’équation et dépendent des valeurs
+propres $k$ définies par (2) :
+
+$$k^2=\dfrac{\omega^2}{c^2}$$
+
+Où $\omega$ correspond à la pulsation de l’onde, $c$ la vitesse de la lumière dans le vide ($3.10^8$ m/s).
+
+![cavite](./Ressources/cavitepara.png)
+
+Pour chacune des directions de propagation (Ox), (Oy) et (Oz), il existe des solutions ou modes de type transverse électrique (TE) et de type transverse magnétique (TM). La solution générale est une combinaison linéaire de toutes ces solutions particulières.
+La résolution de l’équation dans un repère cartésien en régime harmonique impose d’écrire la constante de propagation comme suit (3):
+
+$$k^2=k_x^2+k_y^2+k_z^2$$
+
+En appliquant les conditions aux limites sur les parois (ce qui revient à annuler les composantes tangentielles du champ électrique et normales du champ magnétique), les composantes du nombre d’onde doivent impérativement satisfaire les relations ci-dessous (4):
+
+$$k_x=\dfrac{m\pi}{a}\hspace{1cm}k_y=\dfrac{n\pi}{a}\hspace{1cm}k_z=\dfrac{p\pi}{a}\hspace{1cm}\text{avec } (m,n,p)\in\N^3$$
+
+Dans une cavité, chaque mode n’existe que pour une unique fréquence dépendant du mode de la résonance (caractérisé par le triplet (m; n; p)) et des dimensions de la cage. A l’aide de (2), (3) et (4), on peut alors établir son expression (5):
+
+$$f_{mnp}=\dfrac c2\sqrt{\left(\dfrac{m}{a}\right)^2+\left(\dfrac{n}{b}\right)^2+\left(\dfrac{p}{c}\right)^2}$$
+
+Ainsi, le champ dans la cavité s’identifie à un spectre de raies correspondant aux modes propres de résonance déterminés par les conditions aux limites.
+
 ## Code numérique : prise en main du logiciel FDTD.m  
 
 ```MATLAB 
