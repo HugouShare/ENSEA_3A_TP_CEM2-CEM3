@@ -86,5 +86,19 @@ end
   <img src="https://github.com/user-attachments/assets/64e3d351-f07d-42c5-a0f0-a1240c090be2" width="48%" />
 </p>
 
+### 1°) cf. `tp01.m`
 
+### 2°) L’utilisation d’un code temporel de type FDTD présente plusieurs avantages majeurs :
+1. Accès large bande fréquentielle
+    - Une seule simulation temporelle permet, via une transformée de Fourier, d’obtenir la réponse du système sur une large gamme de fréquences (modes propres, résonances).
+2. Observation directe des phénomènes transitoires
+    - Le code temporel permet d’analyser la propagation des ondes, les réflexions, les interférences et l’établissement des régimes stationnaires.
+3. Simplicité d’implémentation numérique
+    - Les équations de Maxwell sont discrétisées directement dans le temps et l’espace sans résolution de systèmes matriciels complexes.
+4. Grande flexibilité géométrique et matérielle
+    - Les milieux hétérogènes, dispersifs ou dissipatifs peuvent être intégrés naturellement dans le schéma temporel.
+5. Accès simultané aux champs E et H
+    - Le calcul pas à pas permet une visualisation complète de l’évolution spatio-temporelle des champs électromagnétiques.
+
+### 3°) On ne modifie pas le script car nous avons déjà ces paramètres.
 
