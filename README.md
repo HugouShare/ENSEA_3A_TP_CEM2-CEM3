@@ -1,5 +1,3 @@
-# 💼 ENSEA_3A_TP2&TP3_CEM 💼
-
 ## 👨🏽 Équipe
 
 <div align="left">
