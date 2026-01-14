@@ -1,4 +1,4 @@
-# 💼 ENSEA_3A_TP_CEM2 💼
+# 💼 ENSEA_3A_TP2&TP3_CEM 💼
 
 ## 📋 Table des matières
 
@@ -25,4 +25,5 @@
 Vous trouverez, dans le repository, différents dossiers avec :
 - "_Ressources_" : les sujets et documents fournis par le professeur pour le TP
 - "_Livrables_" : les fichiers générés ou utilisés par nous-même durant le TP
-- "_Compte rendu_" : un fichier markdown servant de rapport de TP (**NOTE** le TP3 se trouve à la fin du TP2)
+- "_Compte rendu TP2_" : un fichier markdown servant de rapport de TP2  
+- "_Compte rendu TP3_" : un fichier markdown servant de rapport de TP3   
