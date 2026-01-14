@@ -63,7 +63,23 @@ Lx = 6.7; Ly = 8.4; Lz = 3.5; % Cavity dimensions in meters
 Nx =  67; Ny =  84; Nz =  35; % Number of cells in each direction
 ```  
 
-On ajoute une fonction permettant de calculer la fréquence de résonance  
+On ajoute une fonction permettant de calculer la fréquence de résonance, dont voici le contenu :  
+```MATLAB
+function f = f_cavite(a, b, d, m, n, p)
+% f_cavite calcule la fréquence de résonance d'une cavité rectangulaire
+%
+% Entrées :
+% a, b, d : dimensions de la cavité (m)
+% m, n, p : indices de mode
+%
+% Sortie :
+% f : fréquence de résonance (Hz)
+
+c = 3e8; % vitesse de la lumière (m/s)
+
+f = (c/2) * sqrt( (m/a)^2 + (n/b)^2 + (p/d)^2 );
+end
+```  
 
 <img width="628" height="325" alt="image" src="https://github.com/user-attachments/assets/d82ff249-16ce-486e-874d-c552764f23ca" />
 
