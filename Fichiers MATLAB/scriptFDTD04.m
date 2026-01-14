@@ -2,15 +2,12 @@
 % Fonction FDTD %
 %%%%%%%%%%%%%%%%%
 
-% function [] = foncFDTD02(time)
-
 clear 
 close all
 clc
 
 max_time  = 300;
 max_space = 201;
-% alpha = 0.5;
 
 % Definition des constantes
 eps0 = 8.8542e-12;
@@ -22,8 +19,8 @@ c0 = 1/sqrt(eps0*mu0);
 L = 2;                   % longueur du domaine en m 
 dz = L./(max_space-1);   % pas spatial 
 alpha = 0.5;
-dt = 0.5*dz/c0; % VALABLE SEULEMENT POUR ALPHA = 0.5 
-distance = 0.5*dz;
+dt = 0.5*dz/c0; % dt = alpha.(dz/co) VALABLE SEULEMENT POUR ALPHA = 0.5 
+%distance = 0.5*dz;
 %dt = 3.2e-11;
 alphaE = -1./eps0 .* dt./dz;
 alphaH = -1./mu0 .* dt./dz;
@@ -52,8 +49,8 @@ t0 = 40*dt; % source en temps maximale a cet instant
 %     E(iz) = exp(-(((iz-1)*dz-z0)/(c0*spread))^2);
 % end
 
-% On veut maintenant avoir des conditions absorbantes aux limites : en z = 1
-% et z = max_space
+% On veut maintenant avoir des conditions absorbantes aux limites : 
+% en z = 1 et z = max_space
 Eright1 = 0;
 Eright2 = 0;
 Eleft1 = 0;
@@ -94,7 +91,6 @@ for n = 1:max_time
     figure(1)
     plot([0:max_space-1]*dz,E)
     axis([0 (max_space)*dz -1.1 1.1])
-    % Legendes et titre pour la figure
     title('Simulation FDTD du champ electrique')
     xlabel('z (position en espace) [m]')
     ylabel('E_x [V/m]')
